@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset = "utf-8">
+    <title>Assignment 1 - Page 2</title>
+    <link rel = "stylesheet" href = "assignment1.css">
+</head>
+<body>
+    <header>
+        <div class = "topBar">
+            <a href = "pageTwo.html"> My Account </a>
+            <a href = "#"> Wish List </a>
+            <a href = "#"> Shopping Cart </a>
+            <a href = "#"> Checkout </a>
+        </div>
+        <h1 class = "art"> Art Store </h1>
+        <div class = "center">
+            <a class= "active" href = "pageOne.html"> Home</a>
+            <a href = "#"> About Us</a>
+            <a href = "#"> Art Works</a>
+            <a href = "#"> Artists</a>
+        </div>
+    </header>
+	<main>
+		<div class = "registration">
+			<form method = "POST" action = "http://faculty.washington.edu/ealmasri/assign1.php">
+				<fieldset>
+					<h1 class = "cusreg">Customer Registration</h1>
+					<h2> 1.User Info</h2>
+					<hr class = "custom-hr">
+					<table>
+						<tr>
+							<td>
+								<p>
+									<strong>First Name <br></strong>
+									<input type = "text" name = "first" required>
+								</p>
+							</td>
+							<td>
+								<p style = "margin: 50px;">
+									<strong>Last Name <br></strong>
+									<input type = "text" name= "last" required>
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>
+									<strong>Email <br></strong>
+									<input type = "email" name = "email" required>
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>
+									<strong>Password <br></strong>
+                                    <input type="password" name = "pass1" pattern = "^(?=.*[A-Z]).+$" 
+                                    title = "Please enter a password with at least one capital letter." required>
+								</p>
+							</td>
+							<td>
+								<p style = "margin: 50px;">
+									<strong>Password Repeat <br></strong>
+									<input type = "password" name = "pass2" required>
+								</p>
+							</td>
+						</tr>
+					</table>
+					<h2> 2.Location</h4>
+					<hr>
+					<p>
+						<strong>Address <br></strong>
+						<input type = "text" size = "54" name = "address" required>
+					</p>
+					<table>
+						<tr>
+							<td>
+								<p>
+									<strong>City <br></strong>
+									<input type = "text" name = "city">
+								</p>
+							</td>
+							<td>
+								<p style = "margin-right: 50px;">
+									<strong>State <br></strong>
+									<input type = "text" name = "state">
+								</p>
+							</td>
+							<td>
+								<p>
+									<strong>Zip <br></strong>
+									<input type="text" name = "zip" pattern="[0-9]+" 
+									title = "Please enter a valid zip code." required>
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p style = "margin-right: 50px;">
+									<strong>Phone <br></strong>
+									<input type="text" pattern="^\d{3}-\d{3}-\d{4}$|^$" 
+                                    title="Please enter a valid mobile phone number 
+                                    (e.g., 123-456-7890)" name = "phone" required>
+								</p>
+							</td>
+							<td>
+								<strong>Country <br></strong>
+								<select name = "country">
+									<option value = "United States">United States</option>
+									<option value = "Canada">Canada</option>
+									<option value = "United Kingdom">United Kingdom</option>
+								</select>
+							</td>
+						</tr>
+					</table>
+					<p>
+						<strong>Continent <br></strong>
+						<input type = "radio" name = "continent" value = "Africa"> Africa <br>
+						<input type = "radio" name = "continent" value = "Antarctica"> Antarctica <br>
+						<input type = "radio" name = "continent" value = "Asia"> Asia <br>
+						<input type = "radio" name = "continent" value = "Australia"> Australia <br>
+						<input type = "radio" name = "continent" value = "Europe"> Europe <br>
+						<input type = "radio" name = "continent" value = "North America"> North America <br>
+						<input type = "radio" name = "continent" value = "South America"> South America
+					</p>
+					<h2>3.Personal Details</h4>
+					<hr>
+					<table>
+						<tr>
+							<td>
+								<p>
+									<strong>Birth Day <br></strong>
+									<input type = "date" name = "birthday" placeholder = "dd/mm/yyyy" required>
+								</p>
+							</td>
+							<td>
+								<p>
+									<strong>Favorite Colour <br></strong>
+									<input type = "color" name = "favorite">
+								</p>
+							</td>
+						</tr>
+					</table>
+					<p>
+						<strong>Interest in Art <br></strong>
+						<label>Minimal</label><input type = "range" min="1" max="10" name = "interest"><label>Love it!</label>
+					</p>
+					<h2>4.All Done</h4>
+					<hr>
+					<input type="checkbox" name = "accept" value="on" required><strong>I agree to the <a href = "#">Terms of the Site</a></strong>
+					<p>
+						<button type = "submit"> <div class = "signup"></div> Sign me up!</button>
+					</p>
+				</fieldset>
+			</form>
+		</div>
+	</main>
+	<footer>
+		<p>All images are copyright to their owners.
+			This is just a hypothetical site &copy; 2014 Art Store</p>
+	</footer>
+</body>
+</html>

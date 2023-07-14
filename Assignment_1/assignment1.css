@@ -1,0 +1,169 @@
+header .topBar {
+    text-align: right;
+    padding: 10px 10px;
+    background-color: black;
+}
+
+header .topBar a {
+    color: gray;
+    margin-right: 10px;
+    margin-left: 10px;
+    text-decoration: none;
+}
+
+header .topBar a:hover {
+    background-color:gray;
+    color: white;
+}
+
+.art {
+    font-size: 48pt;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+header .center {
+    overflow: hidden;
+    background-color: white;
+}
+
+.center a:hover {
+    background-color: gray;
+    color: white;
+}
+
+.center a {
+    float: left;
+    color: gray;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.selfPortrait .portTitle {
+    display:block;
+    font-size: 30px;
+    font-weight: bold;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.selfPortrait {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    margin-left: 10px;
+}
+
+.price {
+    font-weight: bold;
+    color: red;
+}
+
+body {
+    margin-top: 0;
+    margin-right: 80px;
+    margin-left: 80px;
+    font-family: sans-serif;
+    background-image: url("start/images/stucco/stucco.png");
+}
+
+main {
+    background-color: white;
+}
+
+footer {
+    background-color: black;
+    color: gray;
+    text-align: center;
+    padding: 8px;
+}
+
+.registration {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.similarProducts {
+    margin-left: 10px;
+    margin-bottom: 20px;
+}
+
+.storeButtons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.button {
+    color: blue;
+    font-weight: bold;
+    font-size: 12pt;
+    border: 2px solid #ddd;
+    text-decoration: none;
+    background: #eee;
+    flex: 1;
+    max-width: 100%;
+}
+
+.straw {
+    background-image: url("start/images/113010-m.jpg");
+    width: 288px;
+    height: 400px;
+    float: left;
+    margin-right: 20px;
+}
+
+.thistle {
+    background-image: url("start/images/thumbs/116010.jpg");
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+}
+
+.toledo {
+    background-image: url("start/images/thumbs/120010.jpg");
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+}
+
+.madame {
+    background-image: url("start/images/thumbs/107010.jpg");
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+}
+
+.pearl {
+    background-image: url("start/images/thumbs/106020.jpg");
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+}
+
+.cusreg {
+    font-size: 36px;
+    margin: none;
+}
+
+.signup {
+    background-image: url("start/images/button_ok.png");
+    width: 32px;
+    height: 32px;
+    margin: 0 auto;
+    display: inline-block;
+}
+
+.form {
+    text-align: center;
+}
+
+.input {
+    font-size: 15px;
+    font-weight: bold;
+    color: blue;
+}

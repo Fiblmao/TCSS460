@@ -1,0 +1,87 @@
+body {
+    width: 800px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 30px;
+    margin-right: 15px;
+    background-color: white;
+    color: #330033;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.firstlevel {
+    font-size: 40px;
+    font-family: serif;
+    font-weight: bold;
+}
+.seclevel {
+    font-size: 24px;
+    text-decoration: underline;
+    font-family: sans-serif;
+}
+p {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: justify;
+    font-size: 18px;
+}
+ul {
+    background-color: #CCFFCC;
+    line-height: 150%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+ol {
+    list-style: upper-alpha;
+    background-color: #FFCC99;
+    line-height: 150%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.sprite1 {
+    float: right;
+    width: 140px;
+    height: 140px;
+    background-image: url("best.png");
+    background-position: 0 0px;
+    
+}
+.sprite1:hover {
+    float: right;
+    width: 140px;
+    height: 140px;
+    background-image: url("best.png");
+    background-position: 0 -140px;
+    
+}
+.sprite2 {
+    float: right;
+    width: 140px;
+    height: 140px;
+    background-image: url("best.png");
+    background-position: 0 -280px;
+}
+.sprite2:hover {
+    float: right;
+    width: 140px;
+    height: 140px;
+    background-image: url("best.png");
+    background-position: 0 -420px;
+}
+a {
+    color:inherit;
+    text-decoration: none;
+}
+ul li a:hover {
+    color: #FF0000;
+    font-weight: bold;
+}
+ol li a:hover {
+    color: #FF0000;
+    font-weight: bold;
+}
+.highlight {
+    color: #008000;
+    font-style: italic;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif
+}
