@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 3</title>
+    <!-- add a reference to the external stylesheet -->
+    <link rel="stylesheet" href="https://bootswatch.com/5/minty/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        body {
+            background-image: url("images/elymei.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .mainContainer {
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+        .thumbnail {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        }
+    
+        .thumbnail img {
+        margin: 0; /* Remove the default margins */
+        max-width: 100%;
+        max-height: 100%;
+    }
+        
+    </style>
+</head>
+
+<body>
+    <!-- HTML code for displaying the navigation bar on the top -->
+    <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+        <div class="container">
+            <a href="#" class="navbar-brand">Fitness and Health Calculator</a>
+        </div>
+    </nav>
+
+    <!-- HTML code for displaying the search container -->
+    <div class="container mainContainer">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
+                    aria-selected="true"> Home</a>
+            </li>
+
+            <!-- Tab for Web Service 1 (BMI) -->
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" id="bmiPanel-tab" data-toggle="tab" href="#bmiPanel" role="tab" aria-controls="bmiPanel"
+                    aria-selected="true" onclick="updateURL('bmi')">BMI</a>
+            </li>
+
+            <!-- Tab for Web Service 2 (Ideal Weight) -->
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" id="iWeightPanel-tab" data-toggle="tab" href="#iWeightPanel" role="tab" aria-controls="iWeightPanel"
+                    aria-selected="true" onclick="updateURL('idealweight')"> Ideal Weight Calculator</a>
+            </li>
+
+            <!-- Tab for Web Service 2 (Body Fat) -->
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" id="bFatPanel-tab" data-toggle="tab" href="#bFatPanel" role="tab" aria-controls="bFatPanel"
+                    aria-selected="true" onclick="updateURL('bodyfat')"> Body Fat Calculator </a>
+            </li>
+
+            <!-- Tab for Web Service 2 (Calories Burned) -->
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" id="calBurnedPanel-tab" data-toggle="tab" href="#calBurnedPanel" role="tab" aria-controls="calBurnedPanel"
+                    aria-selected="true" onclick="updateURL('caloriesburned')"> Calories Burned Calculator </a>
+            </li>
+        </ul>
+
+        <div class="tab-content">
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                <br>
+                <div class="row justify-content-center align-items-center">
+                    <div class="col-md-2">
+                        <div class="thumbnail">
+                            <img src="images/elymei_chibi.png" alt="elymeiChibi" title="elymeiChibi">
+                            <div class="caption" >Welcome!</div>
+                        </div>
+                    </div>
+                </div> <!-- end .row -->
+            </div>
+
+            <!-- Content for Web Service 1: BMI -->
+            <div class="tab-pane fade show" id="bmiPanel" role="tabpanel" aria-labelledby="bmiPanel-tab">
+                <br>
+                <div class="card border-primary mb-3">
+                    <div class="card-header"> Your BMI </div>
+                    <div class="card-body">
+                        <p class="card-title2"> BMI Calculator </p>
+                        <p class="lead"> Please Enter Your: </p>
+                        <p class="lead"> Height (cm)</p>
+                        <input type="number" id="bmiHeight" class="form-control">
+                        <br>
+                        <p class="lead"> Weight (kg)</p>
+                        <input type="number" id="bmiWeight" class="form-control">
+                        <br>
+                        <button type="submit" class="btn btn-primary" id="calculateBMI">Calculate</button>
+                    </div>
+                </div>
+                <br>
+                <div class="card border-primary mb-3" id="bmiResult" style="display: none;">
+                    <div class="card-header">BMI Result</div>
+                    <div class="card-body">
+                        <p class="card-text" id="bmiOutput"></p>
+                    </div>
+                </div>
+            </div>
+
+            
+            <!-- Content for Web Service 2: Ideal Weight -->
+            <div class="tab-pane fade show" id="iWeightPanel" role="tabpanel" aria-labelledby="iWeightPanel-tab">
+                <br>
+                <div class="card border-primary mb-3">
+                    <div class="card-header"> Your Ideal Weight </div>
+                    <div class="card-body">
+                      <p class="card-title2"> Ideal Weight Calculator </p>
+                      <p class="lead"> Please Enter Your: </p>
+                    
+                      <!-- Gender Radio Buttons -->
+                      <p class = "lead"> Gender </p>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="gender" id="male" value="male" checked>
+                        <label class="form-check-label" for="male">Male</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="gender" id="female" value="female">
+                        <label class="form-check-label" for="female">Female</label>
+                      </div>
+                    
+                      <!-- Age and Height Inputs -->
+                      <p class="lead"> Height (cm)</p>
+                      <input type="number" id="iWeightHeight" class="form-control">
+                      <br>
+                      <button type="submit" class="btn btn-primary" id="calculateIdealWeight">Calculate</button>
+                    </div> 
+                </div>
+                <br>
+                <div class="card border-primary mb-3" id="idealWeightResult" style="display: none;">
+                    <div class="card-header">Ideal weight</div>
+                    <div class="card-body">
+                        <p class="card-text" id="idealWeightOutput"></p>
+                    </div>  
+                </div>
+            </div>
+
+            <!-- Content for Web Service 3: Body Fat -->
+            <div class="tab-pane fade show" id="bFatPanel" role="tabpanel" aria-labelledby="bFatPanel-tab">
+                <br>
+                <div class="card border-primary mb-3">
+                    <div class="card-header"> Your Body Fat Percentage </div>
+                    <div class="card-body">
+                      <p class="card-title2"> Body Fat Percentage Calculator </p>
+                      <p class="lead"> Please Enter Your: </p>
+                    
+                      <!-- Gender Radio Buttons -->
+                      <p class = "lead"> Gender </p>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="BFgender" id="male" value="male" checked>
+                        <label class="form-check-label" for="male">Male</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="BFgender" id="female" value="female">
+                        <label class="form-check-label" for="female">Female</label>
+                      </div>
+                    
+                      <!-- Age and Height Inputs -->
+                      <p class="lead"> Age </p>
+                      <input type="number" id="BFage" class="form-control">
+                      <br>
+                      <p class="lead"> Height (cm)</p>
+                      <input type="number" id="BFheight" class="form-control">
+                      <br>
+                      <p class="lead"> Weight (kg)</p>
+                      <input type="number" id="BFweight" class="form-control">
+                      <br>
+                      <button type="submit" class="btn btn-primary" id="calculateBodyFat">Calculate</button>
+                    </div> 
+                </div>
+                <br>
+                <div class="card border-primary mb-3" id="bodyFatResult" style="display: none;">
+                    <div class="card-header">Ideal weight</div>
+                    <div class="card-body">
+                        <p class="card-text" id="bodyFatOutput"></p>
+                    </div>  
+                </div>
+            </div>
+
+            <!-- Content for Web Service 3: Body Fat -->
+            <div class="tab-pane fade show" id="calBurnedPanel" role="tabpanel" aria-labelledby="calBurnedPanel-tab">
+                <br>
+                <div class="card border-primary mb-3">
+                    <div class="card-header"> Calories Burned </div>
+                    <div class="card-body">
+                      <p class="card-title2"> How Much Calories will you burn while running at 6 MPH </p>
+                      <p class="lead"> Please Enter Your: </p>
+                      <p class="lead"> Weight (kg)</p>
+                      <input type="number" id="calBurnedweight" class="form-control">
+                      <br>
+                      <p class="lead"> How long did you run for? (hrs) </p>
+                      <input type="number" id="calBurnTime" class="form-control">
+                      <br>
+                      <button type="submit" class="btn btn-primary" id="calculateCaloriesBurned">Calculate</button>
+                    </div> 
+                </div>
+                <br>
+                <div class="card border-primary mb-3" id="caloriesBurnedResult" style="display: none;">
+                    <div class="card-header">Ideal weight</div>
+                    <div class="card-body">
+                        <p class="card-text" id="caloriesBurnedOutput"></p>
+                    </div>  
+                </div>
+            </div>
+    </div>
+
+<!-- Your HTML code goes here -->
+
+<script>
+    // Function to calculate BMI
+    async function calculateBMI() {
+      var height = $("#bmiHeight").val().trim();
+      var weight = $("#bmiWeight").val().trim();
+  
+      if (height === "" || height == undefined) {
+        alert("Enter a valid height in centimeters.");
+        return;
+      } else if (weight === "" || weight == undefined) {
+        alert("Enter a valid weight in kg.");
+        return;
+      } else {
+        try {
+          const bmiResponse = await fetch(`http://localhost:3000/bmi/${weight}/${height}`);
+          if (!bmiResponse.ok) {
+            throw new Error("Invalid item for BMI");
+          }
+          const bmiData = await bmiResponse.json();
+          console.log(bmiData);
+  
+          // Display result
+          $("#bmiOutput").html("BMI: " + bmiData.bmi);
+          $("#bmiResult").show();
+        } catch (err) {
+          alert(err.message);
+        }
+      }
+    }
+  
+    // Function to calculate Ideal Weight
+    async function calculateIdealWeight() {
+        var height = $("#iWeightHeight").val();
+
+        // Check if height is a valid number greater than 0
+        if (isNaN(height) || parseFloat(height) <= 0) {
+            alert("Enter a valid height in centimeters.");
+            return;
+        } else {
+            try {
+            // Get gender based on the selected radio button
+            var gender = $("input[name='gender']:checked").val();
+
+            const idealWeightResponse = await fetch(`http://localhost:3000/idealweight/${gender}/${height}`);
+            if (!idealWeightResponse.ok) {
+                throw new Error("Error calculating ideal weight");
+            }
+            const idealWeightData = await idealWeightResponse.json();
+            console.log(idealWeightData);
+
+            // Display result
+            $("#idealWeightOutput").html("Ideal Weight: " + idealWeightData.idealWeight + " kg");
+            $("#idealWeightResult").show();
+            } catch (err) {
+            alert(err.message);
+            }
+        }
+    }
+
+
+  
+    // Function to calculate Body Fat
+    async function calculateBodyFat() {
+        var age = $("#BFage").val().trim();
+        var height = $("#BFheight").val().trim();
+        var weight = $("#BFweight").val().trim();
+
+        // Check if age, height, and weight are valid numbers greater than 0
+        if (isNaN(age) || isNaN(height) || isNaN(weight) || parseFloat(age) <= 0 || parseFloat(height) <= 0 || parseFloat(weight) <= 0) {
+            alert("Please enter valid values for age, height, and weight.");
+            return;
+        }
+
+        try {
+            // Get gender based on the selected radio button
+            var gender = $("input[name='BFgender']:checked").val();
+
+            const bodyfatResponse = await fetch(`http://localhost:3000/bodyfat/${age}/${height}/${weight}/${gender}`);
+            if (!bodyfatResponse.ok) {
+                throw new Error("Error calculating body fat");
+            }
+            const bodyfatData = await bodyfatResponse.json();
+            console.log(bodyfatData);
+
+            // Display result
+            $("#bodyFatOutput").html("Body Fat: " + bodyfatData.bodyfat);
+            $("#bodyFatResult").show();
+        } catch (err) {
+            alert(err.message);
+        }
+    }
+
+  
+    // Function to calculate Calories Burned
+    async function calculateCaloriesBurned() {
+        var weight = $("#calBurnedweight").val().trim();
+        var runTime = $("#calBurnTime").val().trim();
+
+        // Check if weight and runTime are valid numbers greater than 0
+        if (isNaN(weight) || isNaN(runTime) || parseFloat(weight) <= 0 || parseFloat(runTime) <= 0) {
+            alert("Please enter valid values for weight and run time.");
+            return;
+        }
+
+        try {
+            const calBurnedResponse = await fetch(`http://localhost:3000/caloriesburned/${weight}/${runTime}`);
+            if (!calBurnedResponse.ok) {
+                throw new Error("Invalid item for Calories Burned");
+            }
+            const calBurnedData = await calBurnedResponse.json();
+            console.log(calBurnedData);
+
+            // Display result
+            $("#caloriesBurnedOutput").html("Calories Burned: " + calBurnedData.caloriesBurned);
+            $("#caloriesBurnedResult").show();
+        } catch (err) {
+            alert(err.message);
+        }
+    }
+  
+    // Click event handlers
+    $("#calculateBMI").click(calculateBMI);
+    $("#calculateIdealWeight").click(calculateIdealWeight);
+    $("#calculateBodyFat").click(calculateBodyFat);
+    $("#calculateCaloriesBurned").click(calculateCaloriesBurned);
+
+    function updateURL(fragment) {
+        const stateObject = { page: fragment };
+        const title = "Fitness and Health Calculator - " + fragment;
+        const url = "/" + fragment;
+
+        // Push the new URL to the browser's history without reloading the page
+        history.pushState(stateObject, title, url);
+        }
+
+    </script>
+  
+      
+
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+
+</body>
+
+</html>
